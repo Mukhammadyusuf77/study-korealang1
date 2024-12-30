@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment for Education</title>
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(to bottom, #74b9ff, #0984e3);
+    color: #fff;
+}
+
+.container {
+    text-align: center;
+    max-width: 600px;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+header h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.buttons {
+    margin: 20px 0;
+}
+
+.button {
+    text-decoration: none;
+    color: #fff;
+    background-color: #0984e3;
+    padding: 10px 20px;
+    margin: 5px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.button:hover {
+    background-color: #74b9ff;
+}
+
+.language-selector {
+    margin-top: 20px;
+}
+
+label {
+    font-size: 16px;
+    margin-right: 10px;
+}
+
+select {
+    padding: 5px;
+    border-radius: 5px;
+    border: none;
+}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1 id="header-title">Payment Required for Education</h1>
+            <p id="header-subtitle">To continue with intermediate level education, please make a payment. Contact us via Telegram, Instagram, or Gmail.</p>
+        </header>
+        <div class="buttons">
+            <a href="https://t.me/korea_time7752" target="_blank" class="button" id="telegram-button">Telegram</a>
+            <a href="https://www.instagram.com/reel/CYPlFAdqH8R/?igshid=MTc4MmM1YmI2Ng%3D%3D" target="_blank" class="button" id="instagram-button">Instagram</a>
+            <a href="mailto:asilbekmeal@gmail.com" class="button" id="gmail-button">Gmail</a>
+        </div>
+        <div class="language-selector">
+            <label for="language">Select Language:</label>
+            <select id="language">
+                <option value="uz">Uzbek</option>
+                <option value="tr">Turkish</option>
+                <option value="ru">Russian</option>
+                <option value="kk">Kazakh</option>
+                <option value="kg">Kyrgyz</option>
+                <option value="np">Nepali</option>
+                <option value="vn">Vietnamese</option>
+                <option value="si">Sinhala</option>
+                <option value="bd">Bengali</option>
+                <option value="ar">Arabic</option>
+                <option value="en" selected>English</option>
+                <option value="th">Thai</option>
+            </select>
+        </div>
+    </div>
+    <script>
+        const translations = {
+    uz: {
+        headerTitle: "O'rta darajadagi ta'lim uchun to'lov qiling",
+        headerSubtitle: "O'rtacha darajadagi ta'limni davom ettirish uchun to'lovni amalga oshiring. Telegram, Instagram yoki Gmail orqali bog'laning.",
+        telegramButton: "Telegram",
+        instagramButton: "Instagram",
+        gmailButton: "Gmail",
+        languageLabel: "Tilni tanlang:"
+    },
+    tr: {
+        headerTitle: "Eğitim için ödeme yapın",
+        headerSubtitle: "Orta düzey eğitime devam etmek için ödeme yapın. Telegram, Instagram veya Gmail üzerinden bizimle iletişime geçin.",
+        telegramButton: "Telegram",
+        instagramButton: "Instagram",
+        gmailButton: "Gmail",
+        languageLabel: "Dil seçin:"
+    },
+    // ... (добавьте остальные языки)
+    en: {
+        headerTitle: "Payment Required for Education",
+        headerSubtitle: "To continue with intermediate level education, please make a payment. Contact us via Telegram, Instagram, or Gmail.",
+        telegramButton: "Telegram",
+        instagramButton: "Instagram",
+        gmailButton: "Gmail",
+        languageLabel: "Select Language:"
+    },
+    ru: {
+    headerTitle: "Сделайте оплату за обучение на среднем уровне",
+    headerSubtitle: "Для продолжения обучения на среднем уровне внесите оплату. Свяжитесь с нами через Telegram, Instagram или Gmail.",
+    telegramButton: "Телеграм",
+    instagramButton: "Инстаграм",
+    gmailButton: "Гмайл",
+    languageLabel: "Выберите язык:"
+},
+kk: {
+    headerTitle: "Орта деңгейдегі білім үшін төлем жасаңыз",
+    headerSubtitle: "Орта деңгейдегі білімді жалғастыру үшін төлем жасаңыз. Telegram, Instagram немесе Gmail арқылы хабарласыңыз.",
+    telegramButton: "Телеграм",
+    instagramButton: "Инстаграм",
+    gmailButton: "Гмайл",
+    languageLabel: "Тілді таңдаңыз:"
+},
+kg: {
+    headerTitle: "Орто деңгээлдеги билим үчүн төлөм жасаңыз",
+    headerSubtitle: "Орто деңгээлдеги билимди улантуу үчүн төлөм жасаңыз. Telegram, Instagram же Gmail аркылуу байланышсаңыз болот.",
+    telegramButton: "Телеграм",
+    instagramButton: "Инстаграм",
+    gmailButton: "Гмайл",
+    languageLabel: "Тилди тандаңыз:"
+},
+np: {
+    headerTitle: "मध्यम स्तरको शिक्षा को लागि भुक्तानी गर्नुहोस्",
+    headerSubtitle: "मध्यम स्तरको शिक्षा जारी राख्न भुक्तानी गर्नुहोस्। Telegram, Instagram वा Gmail मार्फत हामीलाई सम्पर्क गर्नुहोस्।",
+    telegramButton: "टेलीग्राम",
+    instagramButton: "इन्स्टाग्राम",
+    gmailButton: "जिमेल",
+    languageLabel: "भाषा चयन गर्नुहोस्:"
+},
+vn: {
+    headerTitle: "Thanh toán cho giáo dục cấp trung cấp",
+    headerSubtitle: "Để tiếp tục giáo dục cấp trung cấp, hãy thực hiện thanh toán. Liên hệ với chúng tôi qua Telegram, Instagram hoặc Gmail.",
+    telegramButton: "Telegram",
+    instagramButton: "Instagram",
+    gmailButton: "Gmail",
+    languageLabel: "Chọn ngôn ngữ:"
+},
+si: {
+    headerTitle: "මධ්‍යම මට්ටමේ අධ්‍යාපනය සඳහා ගෙවීම් කරන්න",
+    headerSubtitle: "මධ්‍යම මට්ටමේ අධ්‍යාපනය දිගටම කරගෙන යාමට ගෙවීම් කරන්න. Telegram, Instagram හෝ Gmail හරහා අපව සම්බන්ධ කරගන්න.",
+    telegramButton: "ටෙලිග්රෑම්",
+    instagramButton: "ඉන්ස්ටග්රෑම්",
+    gmailButton: "ජී-මේල්",
+    languageLabel: "භාෂාව තෝරන්න:"
+},
+bd: {
+    headerTitle: "মাঝারি স্তরের শিক্ষার জন্য পেমেন্ট করুন",
+    headerSubtitle: "মাঝারি স্তরের শিক্ষা চালিয়ে যেতে, পেমেন্ট করুন। আমাদের সাথে Telegram, Instagram বা Gmail এর মাধ্যমে যোগাযোগ করুন।",
+    telegramButton: "টেলিগ্রাম",
+    instagramButton: "ইনস্টাগ্রাম",
+    gmailButton: "জিমেইল",
+    languageLabel: "ভাষা নির্বাচন করুন:"
+},
+ar: {
+    headerTitle: "قم بالدفع للتعليم على المستوى المتوسط",
+    headerSubtitle: "للاستمرار في التعليم على المستوى المتوسط، قم بالدفع. تواصل معنا عبر Telegram أو Instagram أو Gmail.",
+    telegramButton: "تيليجرام",
+    instagramButton: "إنستغرام",
+    gmailButton: "جي ميل",
+    languageLabel: "اختر اللغة:"
+},
+th: {
+    headerTitle: "ชำระเงินเพื่อการศึกษาระดับกลาง",
+    headerSubtitle: "เพื่อศึกษาต่อในระดับกลาง กรุณาชำระเงิน ติดต่อเราผ่าน Telegram, Instagram หรือ Gmail",
+    telegramButton: "เทเลแกรม",
+    instagramButton: "อินสตาแกรม",
+    gmailButton: "จีเมล",
+    languageLabel: "เลือกภาษา:"
+},
+
+
+
+};
+
+const headerTitle = document.getElementById("header-title");
+const headerSubtitle = document.getElementById("header-subtitle");
+const telegramButton = document.getElementById("telegram-button");
+const instagramButton = document.getElementById("instagram-button");
+const gmailButton = document.getElementById("gmail-button");
+const languageSelector = document.getElementById("language");
+
+languageSelector.addEventListener("change", (e) => {
+    const selectedLanguage = e.target.value;
+    const translation = translations[selectedLanguage];
+    
+    headerTitle.textContent = translation.headerTitle;
+    headerSubtitle.textContent = translation.headerSubtitle;
+    telegramButton.textContent = translation.telegramButton;
+    instagramButton.textContent = translation.instagramButton;
+    gmailButton.textContent = translation.gmailButton;
+});
+
+    </script>
+</body>
+</html>

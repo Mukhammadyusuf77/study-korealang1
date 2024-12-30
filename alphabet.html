@@ -1,0 +1,1130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Korean Alphabet Learning</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(120deg, #84fab0, #8fd3f4);
+            color: #333;
+        }
+        header {
+            background-color: #2c3e50;
+            color: #fff;
+            text-align: center;
+            padding: 1rem;
+        }
+        main {
+            padding: 2rem;
+        }
+        .language-select {
+            text-align: center;
+            margin: 1rem 0;
+        }
+        select {
+            padding: 0.5rem;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            font-size: 1rem;
+        }
+        .alphabet {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+        .letter {
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 1rem;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+        .letter:hover {
+            transform: scale(1.1);
+        }
+        footer {
+            background-color: #2c3e50;
+            color: #fff;
+            text-align: center;
+            padding: 1rem;
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1 id="header-title">Learn Korean Alphabet</h1>
+        <p id="header-subtitle">Explore Hangul step by step!</p>
+    </header>
+
+    <main>
+        <div class="language-select">
+            <label for="language" id="language-label">Choose a language: </label>
+            <select id="language">
+                <option value="en">English</option>
+                <option value="tr">Turkish</option>
+                <option value="ru">Russian</option>
+                <option value="kk">Kazakh</option>
+                <option value="kg">Kyrgyz</option>
+                <option value="np">Nepali</option>
+                <option value="vn">Vietnamese</option>
+                <option value="si">Sinhala (Sri Lanka)</option>
+                <option value="bd">Bengali (Bangladesh)</option>
+                <option value="ar">Arabic</option>
+                <option value="uz">Uzbek</option>
+                <option value="th">Thai</option>
+            </select>
+        </div>
+
+        <div id="content">
+            <div class="alphabet">
+                <!-- Consonants -->
+                <div class="letter">
+                    <h2>ㄱ</h2>
+                    <p id="letter-k">Kiyeok (Consonant)</p>
+                </div>
+                <div class="letter">
+                    <h2>ㄴ</h2>
+                    <p id="letter-n">Nieun (Consonant)</p>
+                </div>
+                <div class="letter">
+                    <h2>ㄷ</h2>
+                    <p id="letter-d">Digeut (Consonant)</p>
+                </div>
+                <div class="letter">
+                    <h2>ㄹ</h2>
+                    <p id="letter-r">Rieul (Consonant)</p>
+                </div>
+                <div class="letter">
+                    <h2>ㅁ</h2>
+                    <p id="letter-m">Mieum (Consonant)</p>
+                </div>
+                <div class="letter">
+                    <h2>ㅂ</h2>
+                    <p id="letter-b">Bieup (Consonant)</p>
+                </div>
+                <div class="letter">
+                    <h2>ㅅ</h2>
+                    <p id="letter-s">Siot (Consonant)</p>
+                </div>
+                <div class="letter">
+                    <h2>ㅈ</h2>
+                    <p id="letter-j">Jieut (Consonant)</p>
+                </div>
+                <div class="letter">
+                    <h2>ㅊ</h2>
+                    <p id="letter-ch">Chieut (Consonant)</p>
+                </div>
+                <div class="letter">
+                    <h2>ㅇ</h2>
+                    <p id="letter-ng">Ieung (Consonant)</p>
+                </div>
+                <div class="letter">
+                    <h2>ㅎ</h2>
+                    <p id="letter-h">Hieut (Consonant)</p>
+                </div>
+                <!-- Дополнительные согласные -->
+                <div class="letter">
+                    <h2>ㅋ</h2>
+                    <p id="letter-kh">Kieuk (Consonant)</p>
+                </div>
+                <div class="letter">
+                    <h2>ㅌ</h2>
+                    <p id="letter-th">Tieut (Consonant)</p>
+                </div>
+                <div class="letter">
+                    <h2>ㅍ</h2>
+                    <p id="letter-ph">Pieup (Consonant)</p>
+                </div>
+                <div class="letter">
+                    <h2>ㅃ</h2>
+                    <p id="letter-pp">Bieup (Double Consonant)</p>
+                </div>
+                <div class="letter">
+                    <h2>ㅉ</h2>
+                    <p id="letter-tt">Jieut (Double Consonant)</p>
+                </div>
+                
+                <!-- Гласные -->
+                <div class="letter">
+                    <h2>ㅏ</h2>
+                    <p id="letter-a">A (Vowel)</p>
+                </div>
+                <div class="letter">
+                    <h2>ㅓ</h2>
+                    <p id="letter-eo">Eo (Vowel)</p>
+                </div>
+                <div class="letter">
+                    <h2>ㅗ</h2>
+                    <p id="letter-o">O (Vowel)</p>
+                </div>
+                <div class="letter">
+                    <h2>ㅜ</h2>
+                    <p id="letter-u">U (Vowel)</p>
+                </div>
+                <div class="letter">
+                    <h2>ㅡ</h2>
+                    <p id="letter-eu">Eu (Vowel)</p>
+                </div>
+                <div class="letter">
+                    <h2>ㅣ</h2>
+                    <p id="letter-i">I (Vowel)</p>
+                </div>
+                <!-- Дополнительные гласные -->
+                <div class="letter">
+                    <h2>ㅐ</h2>
+                    <p id="letter-ae">Ae (Vowel)</p>
+                </div>
+                <div class="letter">
+                    <h2>ㅔ</h2>
+                    <p id="letter-e">E (Vowel)</p>
+                </div>
+                <div class="letter">
+                    <h2>ㅚ</h2>
+                    <p id="letter-oe">Oe (Vowel)</p>
+                </div>
+                <div class="letter">
+                    <h2>ㅟ</h2>
+                    <p id="letter-wi">Wi (Vowel)</p>
+                </div>
+                <div class="letter">
+                    <h2>ㅑ</h2>
+                    <p id="letter-ya">Ya (Vowel)</p>
+                </div>
+                <div class="letter">
+                    <h2>ㅕ</h2>
+                    <p id="letter-yeo">Yeo (Vowel)</p>
+                </div>
+                <div class="letter">
+                    <h2>ㅛ</h2>
+                    <p id="letter-yo">Yo (Vowel)</p>
+                </div>
+                <div class="letter">
+                    <h2>ㅠ</h2>
+                    <p id="letter-yu">Yu (Vowel)</p>
+                </div>
+                <div class="letter">
+                    <h2>ㅘ</h2>
+                    <p id="letter-wa">Wa (Vowel)</p>
+                </div>
+                <div class="letter">
+                    <h2>ㅝ</h2>
+                    <p id="letter-weo">Weo (Vowel)</p>
+                </div>
+                <div class="letter">
+                    <h2>ㅙ</h2>
+                    <p id="letter-wae">Wae (Vowel)</p>
+                </div>
+                <div class="letter">
+                    <h2>ㅞ</h2>
+                    <p id="letter-we">We (Vowel)</p>
+                </div>
+                <div class="letter">
+                    <h2>ㅢ</h2>
+                    <p id="letter-ui">Ui (Vowel)</p>
+                </div>
+                
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Learn Korean Alphabet. All rights reserved.</p>
+    </footer>
+
+    <script>
+        const translations = {
+            en: {
+                "headerTitle": "Koreys alifbosini o'rganing",
+        "headerSubtitle": "Hangulni bosqichma-bosqich o'rganing!",
+        "languageLabel": "Tilni tanlang:",
+        "letters": {
+            "k": "Kiyeok (Consonant)",
+            "n": "Nieun (Consonant)",
+            "d": "Digeut (Consonant)",
+            "r": "Rieul (Consonant)",
+            "m": "Mieum (Consonant)",
+            "b": "Bieup (Consonant)",
+            "s": "Siot (Consonant)",
+            "j": "Jieut (Consonant)",
+            "ch": "Chieut (Consonant)",
+            "ng": "Ieung (Consonant)",
+            "h": "Hieut (Consonant)",
+            "kh": "Kieuk (Consonant)",
+            "th": "Tieut (Consonant)",
+            "ph": "Pieup (Consonant)",
+            "pp": "Bieup (Double Consonant)",
+            "tt": "Jieut (Double Consonant)",
+            "a": "A (Vowel)",
+            "eo": "Eo (Vowel)",
+            "o": "O (Vowel)",
+            "u": "U (Vowel)",
+            "eu": "Eu (Vowel)",
+            "i": "I (Vowel)",
+            "ae": "Ae (Vowel)",
+            "e": "E (Vowel)",
+            "oe": "Oe (Vowel)",
+            "wi": "Wi (Vowel)",
+            "ya": "Ya (Vowel)",
+            "yeo": "Yeo (Vowel)",
+            "yo": "Yo (Vowel)",
+            "yu": "Yu (Vowel)",
+            "wa": "Wa (Vowel)",
+            "weo": "Weo (Vowel)",
+            "wae": "Wae (Vowel)",
+            "we": "We (Vowel)",
+            "ui": "Ui (Vowel)"
+                }
+            },
+            uz: {
+                "headerTitle": "Koreys alifbosini o'rganing",
+        "headerSubtitle": "Hangulni bosqichma-bosqich o'rganing!",
+        "languageLabel": "Tilni tanlang:",
+        letters: {
+            k: "Kiyeok (Unli tovush)",
+            "n": "Nieun (Unli tovush)",
+            "d": "Digeut (Unli tovush)",
+            "r": "Rieul (Unli tovush)",
+            "m": "Mieum (Unli tovush)",
+            "b": "Bieup (Unli tovush)",
+            "s": "Siot (Unli tovush)",
+            "j": "Jieut (Unli tovush)",
+            "ch": "Chieut (Unli tovush)",
+            "ng": "Ieung (Unli tovush)",
+            "h": "Hieut (Unli tovush)",
+            "kh": "Kieuk (Unli tovush)",
+            "th": "Tieut (Unli tovush)",
+            "ph": "Pieup (Unli tovush)",
+            "pp": "Bieup (Ikki unli tovush)",
+            "tt": "Jieut (Ikki unli tovush)",
+            "a": "A (Unli tovush)",
+            "eo": "Eo (Unli tovush)",
+            "o": "O (Unli tovush)",
+            "u": "U (Unli tovush)",
+            "eu": "Eu (Unli tovush)",
+            "i": "I (Unli tovush)",
+            "ae": "Ae (Unli tovush)",
+            "e": "E (Unli tovush)",
+            "oe": "Oe (Unli tovush)",
+            "wi": "Wi (Unli tovush)",
+            "ya": "Ya (Unli tovush)",
+            "yeo": "Yeo (Unli tovush)",
+            "yo": "Yo (Unli tovush)",
+            "yu": "Yu (Unli tovush)",
+            "wa": "Wa (Unli tovush)",
+            "weo": "Weo (Unli tovush)",
+            "wae": "Wae (Unli tovush)",
+            "we": "We (Unli tovush)",
+            "ui": "Ui (Unli tovush)"
+            }
+        },
+            ru: {
+                "headerTitle": "Изучите корейский алфавит",
+        "headerSubtitle": "Изучайте хангыль шаг за шагом!",
+        "languageLabel": "Выберите язык:",
+        "letters": {
+            "k": "Киек (Согласная)",
+            "n": "Ниын (Согласная)",
+            "d": "Дигыт (Согласная)",
+            "r": "Риыл (Согласная)",
+            "m": "Миым (Согласная)",
+            "b": "Биып (Согласная)",
+            "s": "Сиот (Согласная)",
+            "j": "Джиыт (Согласная)",
+            "ch": "Чиыт (Согласная)",
+            "ng": "Иын (Согласная)",
+            "h": "Хиыт (Согласная)",
+            "kh": "Киык (Согласная)",
+            "th": "Тиыт (Согласная)",
+            "ph": "Пиып (Согласная)",
+            "pp": "Биып (Двойная согласная)",
+            "tt": "Джиыт (Двойная согласная)",
+            "a": "А (Гласная)",
+            "eo": "Ео (Гласная)",
+            "o": "О (Гласная)",
+            "u": "У (Гласная)",
+            "eu": "Эу (Гласная)",
+            "i": "И (Гласная)",
+            "ae": "Э (Гласная)",
+            "e": "Э (Гласная)",
+            "oe": "Оэ (Гласная)",
+            "wi": "Уи (Гласная)",
+            "ya": "Я (Гласная)",
+            "yeo": "Ё (Гласная)",
+            "yo": "Йо (Гласная)",
+            "yu": "Ю (Гласная)",
+            "wa": "Ва (Гласная)",
+            "weo": "Вео (Гласная)",
+            "wae": "Вэ (Гласная)",
+            "we": "Вэ (Гласная)",
+            "ui": "Уи (Гласная)"
+        }
+            },
+            tr: {
+"headerTitle": "Kore Alfabesini Öğrenin",
+        "headerSubtitle": "Hangul'ü adım adım öğrenin!",
+        "languageLabel": "Dil Seçin:",
+        "letters": {
+            "k": "Kiyeok (Ünsüz)",
+            "n": "Nieun (Ünsüz)",
+            "d": "Digeut (Ünsüz)",
+            "r": "Rieul (Ünsüz)",
+            "m": "Mieum (Ünsüz)",
+            "b": "Bieup (Ünsüz)",
+            "s": "Siot (Ünsüz)",
+            "j": "Jieut (Ünsüz)",
+            "ch": "Chieut (Ünsüz)",
+            "ng": "Ieung (Ünsüz)",
+            "h": "Hieut (Ünsüz)",
+            "kh": "Kieuk (Ünsüz)",
+            "th": "Tieut (Ünsüz)",
+            "ph": "Pieup (Ünsüz)",
+            "pp": "Bieup (Çift Ünsüz)",
+            "tt": "Jieut (Çift Ünsüz)",
+            "a": "A (Ünlü)",
+            "eo": "Eo (Ünlü)",
+            "o": "O (Ünlü)",
+            "u": "U (Ünlü)",
+            "eu": "Eu (Ünlü)",
+            "i": "I (Ünlü)",
+            "ae": "Ae (Ünlü)",
+            "e": "E (Ünlü)",
+            "oe": "Oe (Ünlü)",
+            "wi": "Wi (Ünlü)",
+            "ya": "Ya (Ünlü)",
+            "yeo": "Yeo (Ünlü)",
+            "yo": "Yo (Ünlü)",
+            "yu": "Yu (Ünlü)",
+            "wa": "Wa (Ünlü)",
+            "weo": "Weo (Ünlü)",
+            "wae": "Wae (Ünlü)",
+            "we": "We (Ünlü)",
+            "ui": "Ui (Ünlü)"
+        }
+            },
+            kk: {
+"headerTitle": "Корея әліпбиін үйреніңіз",
+        "headerSubtitle": "Хангулды қадам-қадаммен үйреніңіз!",
+        "languageLabel": "Тілді таңдаңыз:",
+        "letters": {
+            "k": "Киеок (Дауыссыз)",
+            "n": "Ниын (Дауыссыз)",
+            "d": "Дигыт (Дауыссыз)",
+            "r": "Риыл (Дауыссыз)",
+            "m": "Миым (Дауыссыз)",
+            "b": "Биып (Дауыссыз)",
+            "s": "Сиот (Дауыссыз)",
+            "j": "Джиыт (Дауыссыз)",
+            "ch": "Чиыт (Дауыссыз)",
+            "ng": "Иын (Дауыссыз)",
+            "h": "Хиыт (Дауыссыз)",
+            "kh": "Киык (Дауыссыз)",
+            "th": "Тиыт (Дауыссыз)",
+            "ph": "Пиып (Дауыссыз)",
+            "pp": "Биып (Қосарлы дауыссыз)",
+            "tt": "Джиыт (Қосарлы дауыссыз)",
+            "a": "А (Дауысты)",
+            "eo": "Ео (Дауысты)",
+            "o": "О (Дауысты)",
+            "u": "У (Дауысты)",
+            "eu": "Эу (Дауысты)",
+            "i": "И (Дауысты)",
+            "ae": "Э (Дауысты)",
+            "e": "Э (Дауысты)",
+            "oe": "Оэ (Дауысты)",
+            "wi": "Уи (Дауысты)",
+            "ya": "Я (Дауысты)",
+            "yeo": "Ё (Дауысты)",
+            "yo": "Йо (Дауысты)",
+            "yu": "Ю (Дауысты)",
+            "wa": "Ва (Дауысты)",
+            "weo": "Вео (Дауысты)",
+            "wae": "Вэ (Дауысты)",
+            "we": "Вэ (Дауысты)",
+            "ui": "Уи (Дауысты)"
+        }
+},
+kg: {
+    "headerTitle": "Корей алфавитин үйрөнүңүз",
+        "headerSubtitle": "Хангулду кадам-кадам менен үйрөнүңүз!",
+        "languageLabel": "Тилди тандаңыз:",
+        "letters": {
+            "k": "Киек (Жалгыз үн)",
+            "n": "Ниын (Жалгыз үн)",
+            "d": "Дигыт (Жалгыз үн)",
+            "r": "Риыл (Жалгыз үн)",
+            "m": "Миым (Жалгыз үн)",
+            "b": "Биып (Жалгыз үн)",
+            "s": "Сиот (Жалгыз үн)",
+            "j": "Джиыт (Жалгыз үн)",
+            "ch": "Чиыт (Жалгыз үн)",
+            "ng": "Иын (Жалгыз үн)",
+            "h": "Хиыт (Жалгыз үн)",
+            "kh": "Киык (Жалгыз үн)",
+            "th": "Тиыт (Жалгыз үн)",
+            "ph": "Пиып (Жалгыз үн)",
+            "pp": "Биып (Экининче үн)",
+            "tt": "Джиыт (Экининче үн)",
+            "a": "А (Жалгыз үн)",
+            "eo": "Ео (Жалгыз үн)",
+            "o": "О (Жалгыз үн)",
+            "u": "У (Жалгыз үн)",
+            "eu": "Эу (Жалгыз үн)",
+            "i": "И (Жалгыз үн)",
+            "ae": "Э (Жалгыз үн)",
+            "e": "Э (Жалгыз үн)",
+            "oe": "Оэ (Жалгыз үн)",
+            "wi": "Уи (Жалгыз үн)",
+            "ya": "Я (Жалгыз үн)",
+            "yeo": "Ё (Жалгыз үн)",
+            "yo": "Йо (Жалгыз үн)",
+            "yu": "Ю (Жалгыз үн)",
+            "wa": "Ва (Жалгыз үн)",
+            "weo": "Вео (Жалгыз үн)",
+            "wae": "Вэ (Жалгыз үн)",
+            "we": "Вэ (Жалгыз үн)",
+            "ui": "Уи (Жалгыз үн)"
+        }
+},
+np: {
+"headerTitle": "कोरियाली वर्णमाला सिक्नुहोस्",
+        "headerSubtitle": "हंगुललाई चरणद्वारा चरण सिक्नुहोस्!",
+        "languageLabel": "भाषा चयन गर्नुहोस्:",
+        "letters": {
+            "k": "कीयोक (व्यंजन)",
+            "n": "निउन (व्यंजन)",
+            "d": "दिगुत (व्यंजन)",
+            "r": "रिउल (व्यंजन)",
+            "m": "मिउम (व्यंजन)",
+            "b": "बिउप (व्यंजन)",
+            "s": "सियोट (व्यंजन)",
+            "j": "जिउत (व्यंजन)",
+            "ch": "चिउत (व्यंजन)",
+            "ng": "इउंग (व्यंजन)",
+            "h": "हीउत (व्यंजन)",
+            "kh": "कियुक (व्यंजन)",
+            "th": "तियुत (व्यंजन)",
+            "ph": "पिउप (व्यंजन)",
+            "pp": "बिउप (दोहोरो व्यंजन)",
+            "tt": "जिउत (दोहोरो व्यंजन)",
+            "a": "अ (स्वर)",
+            "eo": "एओ (स्वर)",
+            "o": "ओ (स्वर)",
+            "u": "उ (स्वर)",
+            "eu": "एउ (स्वर)",
+            "i": "इ (स्वर)",
+            "ae": "ए (स्वर)",
+            "e": "ई (स्वर)",
+            "oe": "ओई (स्वर)",
+            "wi": "वी (स्वर)",
+            "ya": "या (स्वर)",
+            "yeo": "यो (स्वर)",
+            "yo": "यो (स्वर)",
+            "yu": "यू (स्वर)",
+            "wa": "वा (स्वर)",
+            "weo": "वियो (स्वर)",
+            "wae": "वए (स्वर)",
+            "we": "वे (स्वर)",
+            "ui": "उई (स्वर)"
+        }
+},
+vn: {
+"headerTitle": "Học bảng chữ cái Hàn Quốc",
+        "headerSubtitle": "Học Hangul từng bước một!",
+        "languageLabel": "Chọn ngôn ngữ:",
+        "letters": {
+            "k": "Kiyeok (Phụ âm)",
+            "n": "Nieun (Phụ âm)",
+            "d": "Digeut (Phụ âm)",
+            "r": "Rieul (Phụ âm)",
+            "m": "Mieum (Phụ âm)",
+            "b": "Bieup (Phụ âm)",
+            "s": "Siot (Phụ âm)",
+            "j": "Jieut (Phụ âm)",
+            "ch": "Chieut (Phụ âm)",
+            "ng": "Ieung (Phụ âm)",
+            "h": "Hieut (Phụ âm)",
+            "kh": "Kieuk (Phụ âm)",
+            "th": "Tieut (Phụ âm)",
+            "ph": "Pieup (Phụ âm)",
+            "pp": "Bieup (Phụ âm đôi)",
+            "tt": "Jieut (Phụ âm đôi)",
+            "a": "A (Nguyên âm)",
+            "eo": "Eo (Nguyên âm)",
+            "o": "O (Nguyên âm)",
+            "u": "U (Nguyên âm)",
+            "eu": "Eu (Nguyên âm)",
+            "i": "I (Nguyên âm)",
+            "ae": "Ae (Nguyên âm)",
+            "e": "E (Nguyên âm)",
+            "oe": "Oe (Nguyên âm)",
+            "wi": "Wi (Nguyên âm)",
+            "ya": "Ya (Nguyên âm)",
+            "yeo": "Yeo (Nguyên âm)",
+            "yo": "Yo (Nguyên âm)",
+            "yu": "Yu (Nguyên âm)",
+            "wa": "Wa (Nguyên âm)",
+            "weo": "Weo (Nguyên âm)",
+            "wae": "Wae (Nguyên âm)",
+            "we": "We (Nguyên âm)",
+            "ui": "Ui (Nguyên âm)"
+        }
+},
+si: {
+"headerTitle": "කොරියානු අකුරු පන්ති ඉගෙන ගන්න",
+        "headerSubtitle": "හංගුල් එකක් එක් එකක් ඉගෙන ගන්න!",
+        "languageLabel": "භාෂාව තෝරන්න:",
+        "letters": {
+            "k": "කියොක් (හඬ)",
+            "n": "නියුන් (හඬ)",
+            "d": "ඩිගුට් (හඬ)",
+            "r": "රියුල් (හඬ)",
+            "m": "මිඋම් (හඬ)",
+            "b": "බිඋප් (හඬ)",
+            "s": "සියොට් (හඬ)",
+            "j": "ජිඋත් (හඬ)",
+            "ch": "චිඋත් (හඬ)",
+            "ng": "ඉඋංග් (හඬ)",
+            "h": "හිඋත් (හඬ)",
+            "kh": "කිඋක් (හඬ)",
+            "th": "තිඋත් (හඬ)",
+            "ph": "පිඋප් (හඬ)",
+            "pp": "බිඋප් (ද්විතීයික හඬ)",
+            "tt": "ජිඋත් (ද්විතීයික හඬ)",
+            "a": "අ (වූර්)",
+            "eo": "ඉඋ (වූර්)",
+            "o": "ඕ (වූර්)",
+            "u": "උ (වූර්)",
+            "eu": "ඊඋ (වූර්)",
+            "i": "ඉ (වූර්)",
+            "ae": "ඒ (වූර්)",
+            "e": "ඉ (වූර්)",
+            "oe": "ඔආ (වූර්)",
+            "wi": "වි (වූර්)",
+            "ya": "යා (වූර්)",
+            "yeo": "යෝ (වූර්)",
+            "yo": "යෝ (වූර්)",
+            "yu": "යූ (වූර්)",
+            "wa": "වා (වූර්)",
+            "weo": "වෙ (වූර්)",
+            "wae": "වැ (වූර්)",
+            "we": "වෙ (වූර්)",
+            "ui": "උඉ (වූර්)"
+        }
+},
+bd: {
+"headerTitle": "কোরিয়ান বর্ণমালা শিখুন",
+        "headerSubtitle": "হাঙ্গুল শিখুন ধাপে ধাপে!",
+        "languageLabel": "ভাষা নির্বাচন করুন:",
+        "letters": {
+            "k": "কিয়োক (ব্যঞ্জন)",
+            "n": "নিয়ুন (ব্যঞ্জন)",
+            "d": "ডিগুট (ব্যঞ্জন)",
+            "r": "রিয়ুল (ব্যঞ্জন)",
+            "m": "মিয়ুম (ব্যঞ্জন)",
+            "b": "বিপ (ব্যঞ্জন)",
+            "s": "সিওট (ব্যঞ্জন)",
+            "j": "জিয়ুত (ব্যঞ্জন)",
+            "ch": "চিয়ুত (ব্যঞ্জন)",
+            "ng": "ইউং (ব্যঞ্জন)",
+            "h": "হিয়ুত (ব্যঞ্জন)",
+            "kh": "কিয়ুক (ব্যঞ্জন)",
+            "th": "তিয়ুত (ব্যঞ্জন)",
+            "ph": "পিইউপি (ব্যঞ্জন)",
+            "pp": "বিপ (ডাবল ব্যঞ্জন)",
+            "tt": "জিয়ুত (ডাবল ব্যঞ্জন)",
+            "a": "আ (স্বর)",
+            "eo": "এও (স্বর)",
+            "o": "ও (স্বর)",
+            "u": "উ (স্বর)",
+            "eu": "এউ (স্বর)",
+            "i": "ই (স্বর)",
+            "ae": "এ (স্বর)",
+            "e": "ই (স্বর)",
+            "oe": "ওএ (স্বর)",
+            "wi": "উই (স্বর)",
+            "ya": "য়া (স্বর)",
+            "yeo": "ইও (স্বর)",
+            "yo": "ইও (স্বর)",
+            "yu": "ইউ (স্বর)",
+            "wa": "ওয়া (স্বর)",
+            "weo": "ওএ (স্বর)",
+            "wae": "ওএ (স্বর)",
+            "we": "ওয়ে (স্বর)",
+            "ui": "ইউই (স্বর)"
+        }
+},
+ar: {
+"headerTitle": "تعلم الأبجدية الكورية",
+        "headerSubtitle": "تعلم الهانغول خطوة بخطوة!",
+        "languageLabel": "اختر اللغة:",
+        "letters": {
+            "k": "كييوك (حرف ساكن)",
+            "n": "نيون (حرف ساكن)",
+            "d": "ديغوت (حرف ساكن)",
+            "r": "ريول (حرف ساكن)",
+            "m": "ميوم (حرف ساكن)",
+            "b": "بيوب (حرف ساكن)",
+            "s": "سيوت (حرف ساكن)",
+            "j": "جيوت (حرف ساكن)",
+            "ch": "تشيون (حرف ساكن)",
+            "ng": "إيونغ (حرف ساكن)",
+            "h": "هيوت (حرف ساكن)",
+            "kh": "كيوك (حرف ساكن)",
+            "th": "تيت (حرف ساكن)",
+            "ph": "بيوب (حرف ساكن)",
+            "pp": "بيوب (حرف ساكن مزدوج)",
+            "tt": "جييت (حرف ساكن مزدوج)",
+            "a": "ا (صوت متحرك)",
+            "eo": "اوه (صوت متحرك)",
+            "o": "أو (صوت متحرك)",
+            "u": "أو (صوت متحرك)",
+            "eu": "إو (صوت متحرك)",
+            "i": "إي (صوت متحرك)",
+            "ae": "إيه (صوت متحرك)",
+            "e": "إي (صوت متحرك)",
+            "oe": "أوي (صوت متحرك)",
+            "wi": "وي (صوت متحرك)",
+            "ya": "يا (صوت متحرك)",
+            "yeo": "يو (صوت متحرك)",
+            "yo": "يو (صوت متحرك)",
+            "yu": "يو (صوت متحرك)",
+            "wa": "وا (صوت متحرك)",
+            "weo": "وإو (صوت متحرك)",
+            "wae": "وي (صوت متحرك)",
+            "we": "وي (صوت متحرك)",
+            "ui": "أوي (صوت متحرك)"
+        }
+},
+th: {
+"headerTitle": "เรียนรู้ตัวอักษรเกาหลี",
+        "headerSubtitle": "เรียนฮันกุลทีละขั้นตอน!",
+        "languageLabel": "เลือกภาษา:",
+        "letters": {
+            "k": "คิเยอก (พยัญชนะ)",
+            "n": "นียุน (พยัญชนะ)",
+            "d": "ดีกึท (พยัญชนะ)",
+            "r": "รีอุล (พยัญชนะ)",
+            "m": "มีอึม (พยัญชนะ)",
+            "b": "บีอึบ (พยัญชนะ)",
+            "s": "ซิออต (พยัญชนะ)",
+            "j": "จีอึท (พยัญชนะ)",
+            "ch": "ชีอึท (พยัญชนะ)",
+            "ng": "อิอึง (พยัญชนะ)",
+            "h": "ฮีอึท (พยัญชนะ)",
+            "kh": "คียุก (พยัญชนะ)",
+            "th": "ทีอึท (พยัญชนะ)",
+            "ph": "พีอึบ (พยัญชนะ)",
+            "pp": "บีอึบ (พยัญชนะคู่)",
+            "tt": "จีอึท (พยัญชนะคู่)",
+            "a": "อา (สระ)",
+            "eo": "อีโอ (สระ)",
+            "o": "โอ (สระ)",
+            "u": "อู (สระ)",
+            "eu": "อึ (สระ)",
+            "i": "อิ (สระ)",
+            "ae": "แอ (สระ)",
+            "e": "เอ (สระ)",
+            "oe": "โอเอ (สระ)",
+            "wi": "วี (สระ)",
+            "ya": "ยา (สระ)",
+            "yeo": "เยอ (สระ)",
+            "yo": "โย (สระ)",
+            "yu": "ยู (สระ)",
+            "wa": "วา (สระ)",
+            "weo": "เวอ (สระ)",
+            "wae": "แว (สระ)",
+            "we": "เว (สระ)",
+            "ui": "อุย (สระ)"
+        }
+},
+vn: [
+    {
+        "title": "Bài học 1: Bảng chữ cái Hàn Quốc",
+        "description": "Trong bài học này, bạn sẽ học những kiến thức cơ bản về Hangul, hệ thống chữ viết của Hàn Quốc. Bạn sẽ hiểu cách đọc và viết các ký tự cơ bản, nguyên âm và phụ âm.",
+        "examples": [
+            "ㅏ (a): Như trong 아버지 (bố).",
+            "ㅂ (b): Như trong 밥 (cơm).",
+            "ㅎ (h): Như trong 하늘 (bầu trời)."
+        ]
+    },
+    {
+        "title": "Bài học 2: Lời chào cơ bản",
+        "description": "Bài học này dạy bạn các lời chào thông dụng trong tiếng Hàn. Bạn sẽ học cách nói 'xin chào', 'chào buổi sáng', 'chào buổi tối' và các lời chào cơ bản khác trong giao tiếp hàng ngày.",
+        "examples": [
+            "안녕하세요 (Annyeonghaseyo): Xin chào / Chào buổi chiều.",
+            "좋은 아침입니다 (Joeun achimimnida): Chào buổi sáng.",
+            "안녕히 가세요 (Annyeonghi gaseyo): Tạm biệt! (khi ai đó rời đi)"
+        ]
+    },
+    {
+        "title": "Bài học 3: Giới thiệu bản thân",
+        "description": "Học cách giới thiệu bản thân bằng tiếng Hàn. Bạn sẽ thực hành nói tên, tuổi, quốc tịch và các thông tin cá nhân khác.",
+        "examples": [
+            "저는 [Tên]입니다 (Jeoneun [Name] imnida): Tôi là [Tên].",
+            "저는 [Quốc gia] 사람입니다 (Jeoneun [Country] saramimnida): Tôi đến từ [Quốc gia].",
+            "나이는 [Tuổi]살입니다 (Naineun [Age] sal imnida): Tôi [Tuổi] tuổi."
+        ]
+    },
+    {
+        "title": "Bài học 4: Các con số",
+        "description": "Bài học này sẽ dạy bạn cách đếm bằng tiếng Hàn. Bạn sẽ học cả các con số gốc Hàn và các con số Sino-Hàn được dùng cho ngày tháng, thời gian và đếm đồ vật.",
+        "examples": [
+            "하나 (Hana): Một.",
+            "둘 (Dul): Hai.",
+            "셋 (Set): Ba.",
+            "일 (Il): Một (sử dụng trong hệ thống Sino-Hàn)."
+        ]
+    },
+    {
+        "title": "Bài học 5: Các ngày trong tuần và tháng trong năm",
+        "description": "Trong bài học này, bạn sẽ học cách nói các ngày trong tuần và các tháng trong năm bằng tiếng Hàn. Bạn cũng sẽ học cách hỏi và nói về ngày tháng.",
+        "examples": [
+            "월요일 (Woryoil): Thứ Hai.",
+            "화요일 (Hwayoil): Thứ Ba.",
+            "1월 (Iwol): Tháng Một."
+        ]
+    },
+    {
+        "title": "Bài học 6: Các câu giao tiếp thông dụng",
+        "description": "Bài học này giới thiệu các câu nói thiết yếu cho giao tiếp hàng ngày. Bạn sẽ học các câu yêu cầu giúp đỡ, yêu cầu đồ vật và các câu nói hữu ích khác.",
+        "examples": [
+            "도와주세요 (Dowajuseyo): Làm ơn giúp tôi.",
+            "감사합니다 (Gamsahamnida): Cảm ơn.",
+            "죄송합니다 (Joesonghamnida): Xin lỗi."
+        ]
+    },
+    {
+        "title": "Bài học 7: Hỏi và trả lời câu hỏi",
+        "description": "Học cách hỏi những câu hỏi cơ bản bằng tiếng Hàn. Bạn sẽ học các từ hỏi như 'cái gì', 'ở đâu', 'như thế nào', và 'tại sao', cũng như cách tạo câu hỏi đơn giản.",
+        "examples": [
+            "뭐예요? (Mwoyeyo?): Cái gì vậy?",
+            "어디에요? (Eodieyo?): Ở đâu?",
+            "왜요? (Waeyo?): Tại sao?"
+        ]
+    },
+    {
+        "title": "Bài học 8: Từ vựng về đồ ăn",
+        "description": "Trong bài học này, bạn sẽ học từ vựng về đồ ăn trong tiếng Hàn. Bạn sẽ có thể gọi món ăn ở nhà hàng, nói về món ăn yêu thích của mình và nhiều hơn nữa.",
+        "examples": [
+            "밥 (Bap): Cơm.",
+            "김치 (Kimchi): Kimchi (dưa muối).",
+            "고기 (Gogi): Thịt."
+        ]
+    },
+    {
+        "title": "Bài học 9: Mua sắm",
+        "description": "Bài học này dạy bạn các câu cơ bản khi mua sắm ở Hàn Quốc. Bạn sẽ học cách hỏi giá, hỏi về kích cỡ và cách mua sắm.",
+        "examples": [
+            "이거 얼마에요? (Igeo eolmaeyo?): Cái này bao nhiêu tiền?",
+            "큰 사이즈 있어요? (Keun saijeu isseoyo?): Có kích cỡ lớn không?",
+            "이거 사고 싶어요 (Igeo sago sipeoyo): Tôi muốn mua cái này."
+        ]
+    },
+    {
+        "title": "Bài học 10: Hướng dẫn",
+        "description": "Trong bài học này, bạn sẽ học cách hỏi và chỉ đường bằng tiếng Hàn. Bạn cũng sẽ học cách di chuyển trong các địa điểm phổ biến như tàu điện ngầm, cửa hàng và nhà hàng.",
+        "examples": [
+            "왼쪽 (Oenjjok): Trái.",
+            "오른쪽 (Oreunjjok): Phải.",
+            "직진 (Jikjin): Đi thẳng."
+        ]
+    },
+    {
+        "title": "Bài học 11: Giao thông",
+        "description": "Học từ vựng cần thiết khi sử dụng phương tiện giao thông ở Hàn Quốc. Bài học này sẽ giúp bạn hiểu cách sử dụng phương tiện công cộng, yêu cầu xe đi và nhiều hơn nữa.",
+        "examples": [
+            "버스 (Beoseu): Xe buýt.",
+            "지하철 (Jihacheol): Tàu điện ngầm.",
+            "택시 (Taeksi): Taxi."
+        ]
+    },
+    {
+        "title": "Bài học 12: Thời tiết",
+        "description": "Trong bài học này, bạn sẽ học cách nói về thời tiết bằng tiếng Hàn. Bạn sẽ có thể miêu tả thời tiết, hỏi về dự báo thời tiết và nói về các mùa trong năm.",
+        "examples": [
+            "날씨가 좋아요 (Nalssiga joayo): Thời tiết đẹp.",
+            "비가 와요 (Bigawayo): Trời đang mưa.",
+            "덥다 (Deopda): Nóng."
+        ]
+    },
+    {
+        "title": "Bài học 13: Gia đình",
+        "description": "Học từ vựng liên quan đến các thành viên trong gia đình bằng tiếng Hàn. Bạn sẽ có thể nói về gia đình mình, giới thiệu các thành viên trong gia đình và hỏi về gia đình người khác.",
+        "examples": [
+            "어머니 (Eomeoni): Mẹ.",
+            "아버지 (Abeoji): Bố.",
+            "형 (Hyeong): Anh trai (dành cho nam)."
+        ]
+    },
+    {
+        "title": "Bài học 14: Nghề nghiệp",
+        "description": "Bài học này dạy bạn các nghề nghiệp thông dụng trong tiếng Hàn. Bạn sẽ học các chức danh công việc, cách hỏi nghề nghiệp của người khác và miêu tả công việc của mình.",
+        "examples": [
+            "의사 (Uisa): Bác sĩ.",
+            "선생님 (Seonsaengnim): Giáo viên.",
+            "직원 (Jigwon): Nhân viên."
+        ]
+    },
+    {
+        "title": "Bài học 15: Sở thích",
+        "description": "Trong bài học này, bạn sẽ học cách nói về sở thích của mình bằng tiếng Hàn. Bạn sẽ thực hành thể hiện sở thích, những điều yêu thích và không yêu thích.",
+        "examples": [
+            "운동 (Undong): Tập thể dục.",
+            "영화 보기 (Yeonghwa bogi): Xem phim.",
+            "독서 (Dokseo): Đọc sách."
+        ]
+    },
+    {
+        "title": "Bài học 16: Thời gian",
+        "description": "Học cách nói giờ trong tiếng Hàn. Bạn sẽ thực hành hỏi giờ, hiểu từ vựng về thời gian và miêu tả lịch trình hàng ngày của mình.",
+        "examples": [
+            "지금 몇 시에요? (Jigeum myeot siyeyo?): Bây giờ mấy giờ?",
+            "3시 (3si): 3 giờ.",
+            "오전 (Ojeon): AM."
+        ]
+    },
+    {
+        "title": "Bài học 17: Địa điểm",
+        "description": "Trong bài học này, bạn sẽ học các từ chỉ địa điểm thông dụng trong tiếng Hàn. Bạn sẽ có thể nói về các địa điểm như nhà, trường học, văn phòng và các địa điểm công cộng.",
+        "examples": [
+            "집 (Jip): Nhà.",
+            "학교 (Hakgyo): Trường học.",
+            "병원 (Byeongwon): Bệnh viện."
+        ]
+    },
+    {
+        "title": "Bài học 18: Tính từ",
+        "description": "Học các tính từ thông dụng trong tiếng Hàn. Bạn sẽ có thể miêu tả sự vật, con người và tình huống một cách chi tiết hơn bằng các tính từ.",
+        "examples": [
+            "큰 (Keun): Lớn.",
+            "작은 (Jageun): Nhỏ.",
+            "빠른 (Ppareun): Nhanh."
+        ]
+    },
+    {
+        "title": "Bài học 19: Động từ",
+        "description": "Bài học này dạy bạn các động từ cơ bản và cách sử dụng trong tiếng Hàn. Bạn sẽ học cách thể hiện hành động, yêu cầu và tạo câu đơn giản.",
+        "examples": [
+            "하다 (Hada): Làm.",
+            "가다 (Gada): Đi.",
+            "먹다 (Meokda): Ăn."
+        ]
+    },
+    {
+        "title": "Bài học 20: Luyện tập",
+        "description": "Trong bài học cuối cùng, bạn sẽ luyện tập các cuộc hội thoại cơ bản trong tiếng Hàn. Bài học này sẽ giúp bạn củng cố những gì bạn đã học trong các bài học trước.",
+        "examples": [
+            "안녕하세요! 이름이 뭐에요? (Annyeonghaseyo! Ireumi mwoyeyo?): Xin chào! Tên bạn là gì?",
+            "저는 [Tên]이에요. (Jeoneun [Name] ieyo): Tôi là [Tên].",
+            "어디 가요? (Eodi gayo?): Bạn đang đi đâu?"
+        ]
+    }
+],
+vn: [
+    {
+        "title": "පාඩම 1: කොරියානු අකුරු මාලාව",
+        "description": "මෙම පාඩමෙන් ඔබට හන්ගුල්, කොරියානු ලිවීමේ පද්ධතිය ගැන මූලික දැනුමක් ලැබේ. ඔබට පද, වෝවල් සහ අර්ථකථන මූලික චරිත කියවීම සහ ලිවීම සම්පූර්ණ කරන්නායි.",
+        "examples": [
+            "ㅏ (a): අබෝජි (දැක්කා).",
+            "ㅂ (b): බැප් (බාත්).",
+            "ㅎ (h): හනල් (අහස)."
+        ]
+    },
+    {
+        "title": "පාඩම 2: මූලික සාධාරණය",
+        "description": "මෙම පාඩමෙන් ඔබට කොරියානු සාධාරණය ගැන ඉගෙන ගන්නා සේම, 'හෙලෝ', 'සුභ උදෑසනක්', 'සුභ සන්ධ්‍යාවක්' සහ අනෙක් මූලික සාධාරණය ගනන් ඉගෙන ගන්නා සේම.",
+        "examples": [
+            "안녕하세요 (Annyeonghaseyo): හෙලෝ / හයි / සුභ උදෑසනක්.",
+            "좋은 아침입니다 (Joeun achimimnida): සුභ උදෑසනක්.",
+            "안녕히 가세요 (Annyeonghi gaseyo): ගුඩ් බයි! (කෙනෙකු පිටවීමේදී)"
+        ]
+    },
+    {
+        "title": "පාඩම 3: ස්වයං ප්‍රකාශනය",
+        "description": "ඔබ කොරියානු භාෂාවෙන් ස්වයං ප්‍රකාශනය කිරීම ඉගෙන ගනී. ඔබේ නම, වයස, ජාතිකත්වය සහ අනෙකුත් පෞද්ගලික විස්තර ලබා ගැනීම.",
+        "examples": [
+            "저는 [නම]입니다 (Jeoneun [Name] imnida): මම [නම]ය.",
+            "저는 [රට] 사람입니다 (Jeoneun [Country] saramimnida): මම [රට] සිටිමි.",
+            "나이는 [වයස]살입니다 (Naineun [Age] sal imnida): මම [වයස] වශයෙන් වයසගත්නෙ."
+        ]
+    },
+    {
+        "title": "පාඩම 4: ගණන",
+        "description": "මෙම පාඩමෙන් ඔබට කොරියානු ගණන කිරීමට ඉගෙන ගන්නා සේම, පෞද්ගලික ගණන හා මත පදනම් වූ ගණන සඳහා භාවිතා වන අංක තීරීකරණය කිරීම.",
+        "examples": [
+            "하나 (Hana): එක.",
+            "둘 (Dul): දෙක.",
+            "셋 (Set): තුන.",
+            "일 (Il): එක (සිනෝ-කොරියානු ගණන ක්‍රමය භාවිතා කිරීම)."
+        ]
+    },
+    {
+        "title": "පාඩම 5: දිනයන් සහ මාස",
+        "description": "මෙම පාඩමෙන් ඔබට කොරියානු භාෂාවෙන් සති දින සහ වසරක මාසය කියවීමට ඉගෙන ගන්නා සේම, දිනය ප්‍රශ්න කිරීම සහ පවසන ක්‍රමය.",
+        "examples": [
+            "월요일 (Woryoil): සඳුදා.",
+            "화요일 (Hwayoil): අඟහරුවාදා.",
+            "1월 (Iwol): ජනවාරි."
+        ]
+    },
+    {
+        "title": "පාඩම 6: සාමාන්‍ය වාක්‍ය",
+        "description": "මෙම පාඩමෙන් ඔබට දෛනික සාකච්ඡා සඳහා අවශ්‍ය වාක්‍ය ඉගෙන ගනී. උදව් ඉල්ලීම, ඉල්ලීම් කිරීම සහ වෙනත් හොඳ වාක්‍ය ඉගෙන ගැනීම.",
+        "examples": [
+            "도와주세요 (Dowajuseyo): කරුණාකර මට උදව් කරන්න.",
+            "감사합니다 (Gamsahamnida): ස්තුතියි.",
+            "죄송합니다 (Joesonghamnida): මට කණගාටුයි."
+        ]
+    },
+    {
+        "title": "පාඩම 7: ප්‍රශ්න කිරීම",
+        "description": "මෙම පාඩමෙන් ඔබට කොරියානු භාෂාවෙන් ප්‍රශ්න කිරීම සම්පූර්ණ කිරීම, 'මොකක්ද', 'ආතෙක්', 'කෙසේද' සහ 'ඇයි' වැනි ප්‍රශ්න වචන ඉගෙන ගැනීම.",
+        "examples": [
+            "뭐예요? (Mwoyeyo?): මෙය මොකක්ද?",
+            "어디에요? (Eodieyo?): මෙය කුමන අයුරකින්?",
+            "왜요? (Waeyo?): ඇයි?"
+        ]
+    },
+    {
+        "title": "පාඩම 8: ආහාර වචන",
+        "description": "මෙම පාඩමෙන් ඔබට ආහාරය පිළිබඳ කොරියානු වචන ඉගෙන ගන්නා සේම, අවශ්‍ය වේලාවට ආහාර ඇණවුම් කිරීම.",
+        "examples": [
+            "밥 (Bap): බත්.",
+            "김치 (Kimchi): කින්චි (පැලූසුන් තක්කාලි).",
+            "고기 (Gogi): මාංශය."
+        ]
+    },
+    {
+        "title": "පාඩම 9: සාමූහික වාණිජ කටයුතු",
+        "description": "මෙම පාඩමෙන් ඔබට කොරියානු භාෂාවෙන් සාමූහික කටයුතු කිරීමෙහි ප්‍රශ්න කරනුම.",
+        "examples": [
+            "이거 얼마에요? (Igeo eolmaeyo?): මේක කීයක්?",
+            "큰 사이즈 있어요? (Keun saijeu isseoyo?): එවක් බලා තියෙනවා?",
+            "이거 사고 싶어요 (Igeo sago sipeoyo): මට මේක මිලදී ගන්නා වේවා."
+        ]
+    },
+    {
+        "title": "පාඩම 10: මාර්ගෝපදේශ",
+        "description": "මෙම පාඩමෙන් ඔබට කොරියානු භාෂාවෙන් මාර්ගෝපදේශ ඉල්ලීම සහ ලබාදීම ඉගෙන ගනී. ඔබට පොදු ස්ථානවලට යන්න, ගමන කිරීම සහ උපදෙස් ලබා ගැනීම හැරිය හැක.",
+        "examples": [
+            "왼쪽 (Oenjjok): වම්.",
+            "오른쪽 (Oreunjjok): දකුණු.",
+            "직진 (Jikjin): සෘජුව."
+        ]
+    },
+    {
+        "title": "පාඩම 11: ප්‍රවාහන",
+        "description": "කොරියාවේ ප්‍රවාහන පද්ධතිය භාවිතා කිරීමට අත්‍යවශ්‍ය වචන ඉගෙන ගන්නා සේම, පාරිභෝගික වාහන, ටැක්සි, බස් සහ තවත් ප්‍රවාහන විකල්ප ගැන දැනගන්න.",
+        "examples": [
+            "버스 (Beoseu): බස්.",
+            "지하철 (Jihacheol): බෲ",
+            "택시 (Taeksi): ටැක්සි."
+        ]
+    },
+    {
+        "title": "පාඩම 12: කාලගුණය",
+        "description": "මෙම පාඩමෙන් ඔබට කාලගුණය ගැන කොරියානු භාෂාවෙන් කතා කිරීමට සහ කාලගුණය ගැණුම සඳහා ප්‍රශ්න කිරීමට ඉගෙන ගන්නා සේම.",
+        "examples": [
+            "날씨가 좋아요 (Nalssiga joayo): කාලගුණය හොඳයි.",
+            "비가 와요 (Bigawayo): වැසි වුනේ.",
+            "덥다 (Deopda): එය උණුසුම්."
+        ]
+    },
+    {
+        "title": "පාඩම 13: පවුල",
+        "description": "ඔබට පවුලේ සාමාජිකයන් ගැන කොරියානු වචන ඉගෙන ගන්නා සේම, ඔබේ පවුල ගැන කතා කිරීමට හා කෙනෙකුගේ පවුල ගැන ප්‍රශ්න කිරීමට.",
+        "examples": [
+            "어머니 (Eomeoni): අම්මා.",
+            "아버지 (Abeoji): තාත්තා.",
+            "형 (Hyeong): එහෙම කෙනෙක් (ඔබේ කෙනෙකුට)."
+        ]
+    },
+    {
+        "title": "පාඩම 14: රැකියා",
+        "description": "මෙම පාඩමෙන් ඔබට කොරියානු භාෂාවෙන් රැකියා වචන ඉගෙන ගනී. කාර්යබහුල අතුරු අංක මෙන්, රැකියා දැක්ම සහ කෙනෙකුගේ රැකියා පිළිබඳ පවා සැලසුම් කේවන පිළිතුරු.",
+        "examples": [
+            "의사 (Uisa): වෛද්‍ය.",
+            "선생님 (Seonsaengnim): ගුරුවරයා.",
+            "직원 (Jigwon): සේවකයා."
+        ]
+    },
+    {
+        "title": "පාඩම 15: අරමුණු",
+        "description": "මෙම පාඩමෙන් ඔබට කොරියානු භාෂාවෙන් ඔබේ අරමුණු කියවීමට සහ අරමුණු සාකච්ඡා කිරීමට ඉගෙන ගන්නා සේම.",
+        "examples": [
+            "공부해요 (Gongbuhaeyo): මම අධ්‍යාපන මාර්ගයේ වැඩ කරනවා.",
+            "여행해요 (Yeohaenghaeyo): මම සංචාරය කිරීමට යන්නෙමි.",
+            "운동해요 (Undonghaeyo): මම ව්‍යායම කිරීමට යන්නෙමි."
+        ]
+    },
+    {
+        "title": "පාඩම 16: නිවාඩු",
+        "description": "මෙම පාඩමෙන් ඔබට කොරියානු භාෂාවෙන් නිවාඩු කතා කිරීමට සහ ඉලක්කම් පිළිබඳව පවසන්න.",
+        "examples": [
+            "휴가 (Hyuga): නිවාඩු.",
+            "여행 (Yeohaeng): සංචාරය.",
+            "바다 (Bada): මුහුදු."
+        ]
+    },
+    {
+        "title": "පාඩම 17: සතුට සහ විනෝදය",
+        "description": "මෙම පාඩමෙන් ඔබට සතුට සහ විනෝදය පිළිබඳ පවාල් විස්තර කිරීමට ඉගෙන ගන්නා සේම.",
+        "examples": [
+            "행복해요 (Haengbokhaeyo): මට සතුටුයි.",
+            "재미있어요 (Jaemiisseoyo): එය විනෝදජනකයි.",
+            "영화 (Yeonghwa): චිත්‍රපට."
+        ]
+    },
+    {
+        "title": "පාඩම 18: රටේ චාරිකා",
+        "description": "මෙම පාඩමෙන් ඔබට කොරියානු භාෂාවෙන් ඔබේ රටේ දී විශේෂයි.",
+        "examples": [
+            "서울 (Seoul): සීල්.",
+            "부산 (Busan): පුසාන්.",
+            "기차 (Gicha): දුම්රිය."
+        ]
+    },
+    {
+        "title": "පාඩම 19: සහජීවනය",
+        "description": "මෙම පාඩමෙන් ඔබට කොරියානු භාෂාවෙන් සහජීවනය ගැන කතා කිරීමට.",
+        "examples": [
+            "친구 (Chingu): මිතුරා.",
+            "대화 (Daehwa): සංවාදය.",
+            "어떻게 지내세요? (Eotteoke jinaeseyo?): ඔබට කෙසේද?",
+        ]
+    },
+    {
+        "title": "පාඩම 20: නිවසේ කටයුතු",
+        "description": "මෙම පාඩමෙන් කාමර, කෑම සහ වැඩසටහන් ගැන.",
+        "examples": [
+            "청소 (Cheongso): පිරිසිදු කිරීම.",
+            "요리 (Yori): පකෝවා.",
+            "빨래 (Ballae): කපාලුම."
+        ]
+    }
+]
+
+
+        };
+
+        document.getElementById("language").addEventListener("change", (event) => {
+            const selectedLanguage = event.target.value;
+            const translation = translations[selectedLanguage];
+
+            if (translation) {
+                document.getElementById("header-title").textContent = translation.headerTitle;
+                document.getElementById("header-subtitle").textContent = translation.headerSubtitle;
+                document.getElementById("language-label").textContent = translation.languageLabel;
+            }
+        });
+    </script>
+</body>
+</html>

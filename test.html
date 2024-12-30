@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Korean Language Quiz</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2 {
+            text-align: center;
+        }
+        .question {
+            margin-bottom: 20px;
+        }
+        .options {
+            list-style: none;
+            padding: 0;
+        }
+        .options li {
+            margin-bottom: 10px;
+        }
+        button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background: #007BFF;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Korean Language Quiz</h1>
+        <h2 id="language-select-title">Select Language:</h2>
+        <select id="language-select">
+            <option value="en">English</option>
+            <option value="uz">Uzbek</option>
+            <option value="ru">Russian</option>
+            <option value="tr">Turkish</option>
+            <option value="kk">Kazakh</option>
+            <option value="ky">Kyrgyz</option>
+            <option value="ne">Nepali</option>
+            <option value="vi">Vietnamese</option>
+            <option value="si">Sinhala</option>
+            <option value="bn">Bengali</option>
+            <option value="ar">Arabic</option>
+            <option value="th">Thai</option>
+        </select>
+        <div id="quiz-container"></div>
+        <button id="submit-button" onclick="checkAnswers()">Submit</button>
+        <h2 id="score" style="display:none;"></h2>
+    </div>
+    <script>
+        const translations = {
+            en: {
+                questions: [
+                    "What is the Korean word for 'rice'?",
+                    "How do you say 'hello' in Korean?",
+                    "What does '안녕하세요' mean?",
+                    "What is the Korean word for 'book'?",
+                    "How do you say 'thank you' in Korean?",
+                    "Translate '김치'.",
+                    "How do you say 'goodbye' when someone is leaving?",
+                    "What is the Korean word for 'mother'?",
+                    "How do you count 'three' in Korean?",
+                    "What does '좋은 아침입니다' mean?"
+                ],
+                options: [
+                    ["Bap", "Kimchi", "Gogi"],
+                    ["Annyeong", "Annyeonghaseyo", "Kamsahamnida"],
+                    ["Goodbye", "Hello", "Thank you"],
+                    ["Chaek", "Jip", "Hakgyo"],
+                    ["Gamsahamnida", "Juseyo", "Annyeong"],
+                    ["Rice", "Kimchi", "Meat"],
+                    ["Annyeonghi gaseyo", "Annyeong", "Annyeonghaseyo"],
+                    ["Eomma", "Eomeoni", "Abeoji"],
+                    ["Hana", "Dul", "Set"],
+                    ["Good morning", "Good afternoon", "Good evening"]
+                ],
+                answers: ["Bap", "Annyeonghaseyo", "Hello", "Chaek", "Gamsahamnida", "Kimchi", "Annyeonghi gaseyo", "Eomeoni", "Set", "Good morning"]
+            },
+            uz: {
+    questions: [
+        "Koreys tilida 'guruch' so'zi qanday?",
+        "Koreys tilida 'salom' qanday aytiladi?",
+        "'안녕하세요' nimani anglatadi?",
+        "Koreys tilida 'kitob' so'zi qanday?",
+        "Koreys tilida 'rahmat' qanday aytiladi?",
+        "'김치'ni tarjima qiling.",
+        "Kimdir ketayotganida 'xayr' qanday aytiladi?",
+        "Koreys tilida 'ona' so'zi qanday?",
+        "Koreys tilida 'uch' qanday hisoblanadi?",
+        "'좋은 아침입니다' nimani anglatadi?"
+    ],
+    options: [
+        ["Bap", "Kimchi", "Gogi"],
+        ["Annyeong", "Annyeonghaseyo", "Kamsahamnida"],
+        ["Xayr", "Salom", "Rahmat"],
+        ["Chaek", "Jip", "Hakgyo"],
+        ["Gamsahamnida", "Juseyo", "Annyeong"],
+        ["Guruch", "Kimchi", "Go'sht"],
+        ["Annyeonghi gaseyo", "Annyeong", "Annyeonghaseyo"],
+        ["Ona", "Onasi", "Otasi"],
+        ["Birinchi", "Ikkinchi", "Uchinchi"],
+        ["Xayrli tong", "Kuningiz hayrli bo'lsin", "Kecha hayrli"]
+    ],
+    answers: ["Bap", "Annyeonghaseyo", "Salom", "Chaek", "Gamsahamnida", "Kimchi", "Annyeonghi gaseyo", "Onasi", "Uchinchi", "Xayrli tong"]
+}
+,
+ru: {
+    questions: [
+        "Как по-корейски сказать 'рис'?",
+        "Как сказать 'привет' на корейском?",
+        "Что значит '안녕하세요'?",
+        "Как по-корейски сказать 'книга'?",
+        "Как сказать 'спасибо' на корейском?",
+        "Переведите '김치'.",
+        "Как сказать 'до свидания', когда кто-то уходит?",
+        "Как по-корейски сказать 'мама'?",
+        "Как сказать 'три' на корейском?",
+        "Что значит '좋은 아침입니다'?"
+    ],
+    options: [
+        ["Bap", "Kimchi", "Gogi"],
+        ["Annyeong", "Annyeonghaseyo", "Kamsahamnida"],
+        ["До свидания", "Привет", "Спасибо"],
+        ["Chaek", "Jip", "Hakgyo"],
+        ["Gamsahamnida", "Juseyo", "Annyeong"],
+        ["Рис", "Кимчи", "Мясо"],
+        ["Annyeonghi gaseyo", "Annyeong", "Annyeonghaseyo"],
+        ["Мама", "Мать", "Отец"],
+        ["Хана", "Дуль", "Сэт"],
+        ["Доброе утро", "Добрый день", "Добрый вечер"]
+    ],
+    answers: ["Bap", "Annyeonghaseyo", "Привет", "Chaek", "Gamsahamnida", "Кимчи", "Annyeonghi gaseyo", "Мать", "Сэт", "Доброе утро"]
+}
+,
+            tr: {
+    questions: [
+        "'Pirinç' kelimesi Korece'de nasıl söylenir?",
+        "'Merhaba' Korece'de nasıl söylenir?",
+        "'안녕하세요' ne anlama gelir?",
+        "'Kitap' kelimesi Korece'de nasıl söylenir?",
+        "'Teşekkür ederim' Korece'de nasıl söylenir?",
+        "'김치' kelimesini çevirin.",
+        "Birisi ayrılırken 'hoşça kal' Korece'de nasıl söylenir?",
+        "'Anne' kelimesi Korece'de nasıl söylenir?",
+        "'Üç' Korece'de nasıl sayılır?",
+        "'좋은 아침입니다' ne anlama gelir?"
+    ],
+    options: [
+        ["Bap", "Kimchi", "Gogi"],
+        ["Annyeong", "Annyeonghaseyo", "Kamsahamnida"],
+        ["Hoşça kal", "Merhaba", "Teşekkür ederim"],
+        ["Chaek", "Jip", "Hakgyo"],
+        ["Gamsahamnida", "Juseyo", "Annyeong"],
+        ["Pirinç", "Kimchi", "Et"],
+        ["Annyeonghi gaseyo", "Annyeong", "Annyeonghaseyo"],
+        ["Anne", "Annesi", "Babası"],
+        ["Hana", "Dul", "Set"],
+        ["Günaydın", "İyi günler", "İyi akşamlar"]
+    ],
+    answers: ["Bap", "Annyeonghaseyo", "Merhaba", "Chaek", "Gamsahamnida", "Kimchi", "Annyeonghi gaseyo", "Anne", "Set", "Günaydın"]
+}
+,
+kk: {
+    questions: [
+        "Кәріс тілінде 'күріш' қалай айтылады?",
+        "'Сәлем' кәріс тілінде қалай айтылады?",
+        "'안녕하세요' нені білдіреді?",
+        "Кәріс тілінде 'кітап' қалай айтылады?",
+        "'Рахмет' кәріс тілінде қалай айтылады?",
+        "'김치' сөзін аударыңыз.",
+        "Біреу кетіп бара жатқанда 'сау бол' қалай айтылады?",
+        "Кәріс тілінде 'ана' қалай айтылады?",
+        "'Үш' кәріс тілінде қалай саналады?",
+        "'좋은 아침입니다' нені білдіреді?"
+    ],
+    options: [
+        ["Bap", "Kimchi", "Gogi"],
+        ["Annyeong", "Annyeonghaseyo", "Kamsahamnida"],
+        ["Қош бол", "Сәлем", "Рахмет"],
+        ["Chaek", "Jip", "Hakgyo"],
+        ["Gamsahamnida", "Juseyo", "Annyeong"],
+        ["Күріш", "Кимчи", "Ет"],
+        ["Annyeonghi gaseyo", "Annyeong", "Annyeonghaseyo"],
+        ["Ана", "Анасы", "Әкесі"],
+        ["Хана", "Дул", "Сэт"],
+        ["Қайырлы таң", "Қайырлы күн", "Қайырлы кеш"]
+    ],
+    answers: ["Bap", "Annyeonghaseyo", "Сәлем", "Chaek", "Gamsahamnida", "Кимчи", "Annyeonghi gaseyo", "Анасы", "Сэт", "Қайырлы таң"]
+}
+,
+ky: {
+    questions: [
+        "Корея тилинде 'күрүч' кантип айтылат?",
+        "'Салам' корей тилинде кантип айтылат?",
+        "'안녕하세요' эмнени билдирет?",
+        "Корея тилинде 'китеп' кантип айтылат?",
+        "'Рахмат' корей тилинде кантип айтылат?",
+        "'김치' сөзүн которуңуз.",
+        "Бирөө кетип жатканда 'кош бол' кантип айтылат?",
+        "Корея тилинде 'эне' кантип айтылат?",
+        "'Үч' корей тилинде кантип айтылат?",
+        "'좋은 아침입니다' эмнени билдирет?"
+    ],
+    options: [
+        ["Bap", "Kimchi", "Gogi"],
+        ["Annyeong", "Annyeonghaseyo", "Kamsahamnida"],
+        ["Кош бол", "Салам", "Рахмат"],
+        ["Chaek", "Jip", "Hakgyo"],
+        ["Gamsahamnida", "Juseyo", "Annyeong"],
+        ["Күрүч", "Кимчи", "Эт"],
+        ["Annyeonghi gaseyo", "Annyeong", "Annyeonghaseyo"],
+        ["Эне", "Энеси", "Атасы"],
+        ["Хана", "Дул", "Сет"],
+        ["Кутман таң", "Кутман күн", "Кутман кеч"]
+    ],
+    answers: ["Bap", "Annyeonghaseyo", "Салам", "Chaek", "Gamsahamnida", "Кимчи", "Annyeonghi gaseyo", "Энеси", "Сет", "Кутман таң"]
+}
+,
+ne: {
+    questions: [
+        "'चामल' कोरियन भाषामा कसरी भनिन्छ?",
+        "'नमस्ते' कोरियन भाषामा कसरी भनिन्छ?",
+        "'안녕하세요' को अर्थ के हो?",
+        "'पुस्तक' कोरियन भाषामा कसरी भनिन्छ?",
+        "'धन्यवाद' कोरियन भाषामा कसरी भनिन्छ?",
+        "'김치' अनुवाद गर्नुहोस्।",
+        "कोही जाँदा 'बिदाई' कोरियन भाषामा कसरी भनिन्छ?",
+        "'आमा' कोरियन भाषामा कसरी भनिन्छ?",
+        "'तीन' कोरियन भाषामा कसरी गन्ती गरिन्छ?",
+        "'좋은 아침입니다' को अर्थ के हो?"
+    ],
+    options: [
+        ["Bap", "Kimchi", "Gogi"],
+        ["Annyeong", "Annyeonghaseyo", "Kamsahamnida"],
+        ["बिदाई", "नमस्ते", "धन्यवाद"],
+        ["Chaek", "Jip", "Hakgyo"],
+        ["Gamsahamnida", "Juseyo", "Annyeong"],
+        ["चामल", "किम्ची", "मासु"],
+        ["Annyeonghi gaseyo", "Annyeong", "Annyeonghaseyo"],
+        ["आमा", "माता", "बुवा"],
+        ["हाना", "दुई", "सेट"],
+        ["सुप्रभात", "शुभ अपराह्न", "शुभ संध्या"]
+    ],
+    answers: ["Bap", "Annyeonghaseyo", "नमस्ते", "Chaek", "Gamsahamnida", "किम्ची", "Annyeonghi gaseyo", "आमा", "सेट", "सुप्रभात"]
+}
+,
+vi: {
+    questions: [
+        "Từ 'cơm' trong tiếng Hàn là gì?",
+        "Làm thế nào để nói 'xin chào' trong tiếng Hàn?",
+        "'안녕하세요' có nghĩa là gì?",
+        "Từ 'sách' trong tiếng Hàn là gì?",
+        "Làm thế nào để nói 'cảm ơn' trong tiếng Hàn?",
+        "Dịch '김치'.",
+        "Làm thế nào để nói 'tạm biệt' khi ai đó rời đi?",
+        "Từ 'mẹ' trong tiếng Hàn là gì?",
+        "Làm thế nào để đếm 'ba' trong tiếng Hàn?",
+        "'좋은 아침입니다' có nghĩa là gì?"
+    ],
+    options: [
+        ["Bap", "Kimchi", "Gogi"],
+        ["Annyeong", "Annyeonghaseyo", "Kamsahamnida"],
+        ["Tạm biệt", "Xin chào", "Cảm ơn"],
+        ["Chaek", "Jip", "Hakgyo"],
+        ["Gamsahamnida", "Juseyo", "Annyeong"],
+        ["Cơm", "Kimchi", "Thịt"],
+        ["Annyeonghi gaseyo", "Annyeong", "Annyeonghaseyo"],
+        ["Mẹ", "Mẫu thân", "Cha"],
+        ["Hana", "Dul", "Set"],
+        ["Chào buổi sáng", "Chào buổi chiều", "Chào buổi tối"]
+    ],
+    answers: ["Bap", "Annyeonghaseyo", "Xin chào", "Chaek", "Gamsahamnida", "Kimchi", "Annyeonghi gaseyo", "Mẹ", "Set", "Chào buổi sáng"]
+}
+,
+si: {
+    questions: [
+        "'සාලය' කෙරියානු භාෂාවෙන් කෙසේද?",
+        "'ආයුබෝවන්' කෙරියානු භාෂාවෙන් කෙසේද?",
+        "'안녕하세요' යන්නේ අර්ථය කුමක්ද?",
+        "'පොත' කෙරියානු භාෂාවෙන් කෙසේද?",
+        "'ස්තුතියි' කෙරියානු භාෂාවෙන් කෙසේද?",
+        "'김치' පරිවර්තනය කරන්න.",
+        "කෙනෙක් පිටවීමේදී 'ගිහිල්ලා එන්න' කෙසේද?",
+        "'මව' කෙරියානු භාෂාවෙන් කෙසේද?",
+        "'තුන' කෙරියානු භාෂාවෙන් කෙසේ ගණන් කරන්නේද?",
+        "'좋은 아침입니다' යන්නේ අර්ථය කුමක්ද?"
+    ],
+    options: [
+        ["Bap", "Kimchi", "Gogi"],
+        ["Annyeong", "Annyeonghaseyo", "Kamsahamnida"],
+        ["ආයුබෝවන්", "කොහොමද", "ස්තුතියි"],
+        ["Chaek", "Jip", "Hakgyo"],
+        ["Gamsahamnida", "Juseyo", "Annyeong"],
+        ["සාලය", "කිම්චි", "මස්"],
+        ["Annyeonghi gaseyo", "Annyeong", "Annyeonghaseyo"],
+        ["මව", "මවගෙ", "පිය"],
+        ["හන", "දූල්", "සෙට්"],
+        ["සුභ උදෑසන", "සුභ සැන්දෑව", "සුභ රාත්‍රිය"]
+    ],
+    answers: ["Bap", "Annyeonghaseyo", "ආයුබෝවන්", "Chaek", "Gamsahamnida", "කිම්චි", "Annyeonghi gaseyo", "මව", "සෙට්", "සුභ උදෑසන"]
+}
+,
+bn: {
+    questions: [
+        "'চাল' কোরিয়ান ভাষায় কীভাবে বলা হয়?",
+        "'হ্যালো' কোরিয়ান ভাষায় কীভাবে বলা হয়?",
+        "'안녕하세요' এর অর্থ কী?",
+        "'বই' কোরিয়ান ভাষায় কীভাবে বলা হয়?",
+        "'ধন্যবাদ' কোরিয়ান ভাষায় কীভাবে বলা হয়?",
+        "'김치' অনুবাদ করুন।",
+        "কেউ চলে গেলে 'বিদায়' কোরিয়ান ভাষায় কীভাবে বলা হয়?",
+        "'মা' কোরিয়ান ভাষায় কীভাবে বলা হয়?",
+        "'তিন' কোরিয়ান ভাষায় কীভাবে গণনা করবেন?",
+        "'좋은 아침입니다' এর অর্থ কী?"
+    ],
+    options: [
+        ["Bap", "Kimchi", "Gogi"],
+        ["Annyeong", "Annyeonghaseyo", "Kamsahamnida"],
+        ["বিদায়", "হ্যালো", "ধন্যবাদ"],
+        ["Chaek", "Jip", "Hakgyo"],
+        ["Gamsahamnida", "Juseyo", "Annyeong"],
+        ["চাল", "কিমচি", "মাংস"],
+        ["Annyeonghi gaseyo", "Annyeong", "Annyeonghaseyo"],
+        ["মা", "মাতা", "বাবা"],
+        ["হানা", "দুই", "সেট"],
+        ["শুভ সকাল", "শুভ অপরাহ্ন", "শুভ সন্ধ্যা"]
+    ],
+    answers: ["Bap", "Annyeonghaseyo", "হ্যালো", "Chaek", "Gamsahamnida", "কিমচি", "Annyeonghi gaseyo", "মা", "সেট", "শুভ সকাল"]
+}
+,
+ar: {
+    questions: [
+        "ما هي كلمة 'الأرز' بالكورية؟",
+        "كيف تقول 'مرحباً' بالكورية؟",
+        "ماذا يعني '안녕하세요'؟",
+        "ما هي كلمة 'كتاب' بالكورية؟",
+        "كيف تقول 'شكراً' بالكورية؟",
+        "ترجم '김치'.",
+        "كيف تقول 'وداعاً' عندما يغادر شخص ما؟",
+        "ما هي كلمة 'أم' بالكورية؟",
+        "كيف تعد 'ثلاثة' بالكورية؟",
+        "ماذا يعني '좋은 아침입니다'؟"
+    ],
+    options: [
+        ["Bap", "Kimchi", "Gogi"],
+        ["Annyeong", "Annyeonghaseyo", "Kamsahamnida"],
+        ["وداعاً", "مرحباً", "شكراً"],
+        ["Chaek", "Jip", "Hakgyo"],
+        ["Gamsahamnida", "Juseyo", "Annyeong"],
+        ["الأرز", "الكيمتشي", "اللحم"],
+        ["Annyeonghi gaseyo", "Annyeong", "Annyeonghaseyo"],
+        ["أم", "أمها", "أب"],
+        ["هانا", "دول", "ست"],
+        ["صباح الخير", "مساء الخير", "مساء الخير"]
+    ],
+    answers: ["Bap", "Annyeonghaseyo", "مرحباً", "Chaek", "Gamsahamnida", "الكيمتشي", "Annyeonghi gaseyo", "أم", "ست", "صباح الخير"]
+}
+,
+th: {
+    questions: [
+        "คำว่า 'ข้าว' ในภาษาเกาหลีคืออะไร?",
+        "พูด 'สวัสดี' ในภาษาเกาหลีว่าอย่างไร?",
+        "'안녕하세요' หมายความว่าอะไร?",
+        "คำว่า 'หนังสือ' ในภาษาเกาหลีคืออะไร?",
+        "พูด 'ขอบคุณ' ในภาษาเกาหลีว่าอย่างไร?",
+        "แปล '김치'.",
+        "พูด 'ลาก่อน' เมื่อมีคนจากไปว่าอย่างไร?",
+        "คำว่า 'แม่' ในภาษาเกาหลีคืออะไร?",
+        "นับ 'สาม' ในภาษาเกาหลีว่าอย่างไร?",
+        "'좋은 아침입니다' หมายความว่าอะไร?"
+    ],
+    options: [
+        ["Bap", "Kimchi", "Gogi"],
+        ["Annyeong", "Annyeonghaseyo", "Kamsahamnida"],
+        ["ลาก่อน", "สวัสดี", "ขอบคุณ"],
+        ["Chaek", "Jip", "Hakgyo"],
+        ["Gamsahamnida", "Juseyo", "Annyeong"],
+        ["ข้าว", "กิมจิ", "เนื้อ"],
+        ["Annyeonghi gaseyo", "Annyeong", "Annyeonghaseyo"],
+        ["แม่", "มารดา", "พ่อ"],
+        ["ฮานา", "ดุล", "เซต"],
+        ["สวัสดีตอนเช้า", "สวัสดีตอนบ่าย", "สวัสดีตอนเย็น"]
+    ],
+    answers: ["Bap", "Annyeonghaseyo", "สวัสดี", "Chaek", "Gamsahamnida", "กิมจิ", "Annyeonghi gaseyo", "แม่", "เซต", "สวัสดีตอนเช้า"]
+}
+
+        };
+
+        let currentLanguage = "en";
+
+        document.getElementById("language-select").addEventListener("change", function () {
+            currentLanguage = this.value;
+            loadQuiz();
+        });
+
+        function loadQuiz() {
+            const quizContainer = document.getElementById("quiz-container");
+            quizContainer.innerHTML = "";
+
+            const languageData = translations[currentLanguage];
+
+            languageData.questions.forEach((question, index) => {
+                const questionDiv = document.createElement("div");
+                questionDiv.classList.add("question");
+
+                const questionText = document.createElement("h3");
+                questionText.textContent = `${index + 1}. ${question}`;
+                questionDiv.appendChild(questionText);
+
+                const optionsList = document.createElement("ul");
+                optionsList.classList.add("options");
+
+                languageData.options[index].forEach(option => {
+                    const optionItem = document.createElement("li");
+                    const optionInput = document.createElement("input");
+                    optionInput.type = "radio";
+                    optionInput.name = `question-${index}`;
+                    optionInput.value = option;
+
+                    const optionLabel = document.createElement("label");
+                    optionLabel.textContent = option;
+
+                    optionItem.appendChild(optionInput);
+                    optionItem.appendChild(optionLabel);
+                    optionsList.appendChild(optionItem);
+                });
+
+                questionDiv.appendChild(optionsList);
+                quizContainer.appendChild(questionDiv);
+            });
+        }
+
+        function checkAnswers() {
+            const languageData = translations[currentLanguage];
+            let score = 0;
+
+            languageData.questions.forEach((_, index) => {
+                const selectedOption = document.querySelector(`input[name="question-${index}"]:checked`);
+                if (selectedOption && selectedOption.value === languageData.answers[index]) {
+                    score++;
+                }
+            });
+
+            const scoreElement = document.getElementById("score");
+            scoreElement.style.display = "block";
+            scoreElement.textContent = `Your score: ${score} / ${languageData.questions.length}`;
+        }
+
+        loadQuiz();
+    </script>
+</body>
+</html>

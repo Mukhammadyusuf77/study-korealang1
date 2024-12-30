@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Korean Language Learning</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f4f4f9;
+      color: #333;
+    }
+    header {
+      background: #6200ea;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    .container {
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 20px;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    .course-list {
+      list-style: none;
+      padding: 0;
+    }
+    .course-list li {
+      margin: 10px 0;
+    }
+    .course-list button {
+      padding: 10px 20px;
+      background: #6200ea;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    .course-list button:hover {
+      background: #3700b3;
+    }
+    footer {
+      text-align: center;
+      padding: 10px;
+      background: #6200ea;
+      color: white;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
+    .language-switcher {
+      text-align: right;
+      margin-bottom: 10px;
+    }
+    .language-switcher select {
+      padding: 5px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Learn Korean Language</h1>
+    <p>Choose your course and start learning!</p>
+  </header>
+  <div class="container">
+    <div class="language-switcher">
+      <label for="language">Language:</label>
+      <select id="language" onchange="changeLanguage()">
+        <option value="en">English</option>
+        <option value="uz">Uzbek</option>
+        <option value="ru">Russian</option>
+        <option value="ne">Nepali</option>
+        <option value="vi">Vietnamese</option>
+        <option value="si">Sinhala</option>
+        <option value="kk">Kazakh</option>
+        <option value="ar">Arabic</option>
+        <option value="th">Thai</option>
+        <option value="bn">Bengali</option>
+        <option value="ky">Kyrgyz</option>
+        <option value="tr">Turkish</option>
+        <option value="ye">Yemeni</option>
+      </select>
+    </div>
+
+    <ul class="course-list">
+      <li>
+        <button onclick="startCourse('Alphabet')">Alphabet</button>
+      </li>
+      <li>
+        <button onclick="startCourse('beginner')">Beginner Course</button>
+      </li>
+      <li>
+        <button onclick="startCourse('intermediate')">Intermediate Course</button>
+      </li>
+      <li>
+        <button onclick="startCourse('professional')">Professional Course</button>
+      </li>
+    </ul>
+  </div>
+
+  <footer>
+    <p>&copy; 2024 Korean Language Learning</p>
+  </footer>
+
+  <script>
+    function changeLanguage() {
+      const language = document.getElementById('language').value;
+      alert('Language changed to: ' + language); // Placeholder: Add actual translations here.
+    }
+
+    function startCourse(level) {
+      if (level === 'beginner') {
+        window.location.href = 'lessons.html';
+      }
+      if (level === 'Alphabet') {
+        window.location.href = 'alphabet.html';
+      } else if (level === 'intermediate') {
+        window.location.href = 'payments.html';;
+      } else if (level === 'professional') {
+        window.location.href = 'payments.html';;
+      }
+    }
+  </script>
+</body>
+</html>
